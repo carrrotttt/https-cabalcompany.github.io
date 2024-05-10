@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Join Force Instrument</title>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin:0;
+      padding:0;
+      font-family: sans-serif;
+      background: linear-gradient(#af40ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      width: 300px;
+      padding: 40px;
+      background: rgba(0,0,0,.5);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0,0,0,.6);
+      border-radius: 10px;
+    }
+
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-box .user-box {
+      position: relative;
+    }
+
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      top:0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #f68e44;
+      font-size: 12px;
+    }
+
+    #submitButton {
+      background-color: #333; 
+      color: #fff; 
+      border: none; 
+      border-radius: 5px; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      transition: background-color 0.3s; 
+    }
+
+    #submitButton:hover {
+      background-color: #555;
+    }
+
+    #loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      color: #fff;
+    }
+
+    #submitButton.loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    #submitButton.loading:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 8px);
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm" action="#">
+      <div class="user-box">
+        <input id="username" type="text" name="username" required>
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input id="password" type="password" name="password" required>
+        <label>Password</label>
+      </div>
+      <button id="submitButton" type="submit">Submit</button>
+      <div id="loading">Loading...</div>
+    </form>
+  </div>
+  
+  <script>
+    document.getElementById("submitButton").addEventListener("click", function(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value.trim();
+      var password = document.getElementById("password").value.trim();
+      var submitButton = document.getElementById("submitButton");
+
+      if (username === "" || password === "") {
+        alert("Bastos ang next page.");
+      } else {
+        
+        submitButton.classList.add("loading");
+
+        setTimeout(function() {
+         
+          window.location.href = "file:///home/chronos/u-5c8abfe71efe0c06a248bf44504cdddb5c3b49dc/MyFiles/Downloads/cabal,%20cabanero/product.html";
+          submitButton.classList.remove("loading");
+        }, 2000);             
+      }
+    });
+  </script>
+</body>
+</html>
